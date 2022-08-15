@@ -1,9 +1,5 @@
 package com.crm.sdet.product;
 
-
-
-
-
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -41,7 +37,7 @@ public class ProductTest extends BaseClass {
 			String ActualProductData =pv.actualProductName();
 			Assert.assertEquals(ActualProductData.contains(name), true);
 			home.signOut();
-			
+			driver.quit();
 		
 			
 		

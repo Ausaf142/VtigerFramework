@@ -53,7 +53,7 @@
         <version>3.0.0-M7</version>
         <configuration>
           <suiteXmlFiles>
-            <suiteXmlFile>RegrssionModuletestng.xml</suiteXmlFile>
+            <suiteXmlFile>Batchtestng.xml</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
       </plugin>

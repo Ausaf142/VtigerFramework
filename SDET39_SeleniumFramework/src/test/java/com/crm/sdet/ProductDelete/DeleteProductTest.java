@@ -43,6 +43,7 @@ public class DeleteProductTest extends BaseClass{
 		WebDriverUtility wlib = new WebDriverUtility();
 		wlib.switchToAlertAndAccept(driver);
 		home.signOut();
+		driver.quit();
 			
 			
 	}

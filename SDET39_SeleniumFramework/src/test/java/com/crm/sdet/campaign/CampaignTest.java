@@ -17,7 +17,7 @@ import com.crm.objectRepsitory.CampaignValidation;
 import com.crm.objectRepsitory.HomePage;
 
 public class CampaignTest extends BaseClass {
-	@Test
+	@Test (groups="smokeTest")
 	public void createCampaign() throws Throwable {
 		
 		Java_Utility jlib=new Java_Utility();
@@ -40,6 +40,7 @@ public class CampaignTest extends BaseClass {
 		
 		
 		home.signOut();
+		driver.quit();
 		
 		
 	}

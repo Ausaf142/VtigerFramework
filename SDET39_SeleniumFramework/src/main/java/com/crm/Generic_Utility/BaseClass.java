@@ -12,6 +12,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
+
 import com.crm.objectRepsitory.LogInPage;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -29,24 +31,24 @@ public class BaseClass {
 	public void BT() {
 		System.out.println("execute script in paralle mode");
 	}
-	//@Parameters("BROWSER")
+	//@Parameters("BROWSER") 
 	@BeforeClass (groups={"smokeTest","regressionTest"})
+	             // public void BC(String BROWSER) throws Throwable {  //cross browser
 	public void BC() throws Throwable {
-	
-		String browser = flib.getKeyValue("browser");
-		if(browser.equalsIgnoreCase("chrome")) {
+		System.out.println("Launching Browser");
+		String BROWSER = flib.getKeyValue("browser");         //put in comment during cross
+		if(BROWSER.equalsIgnoreCase("chrome")) {
 		WebDriverManager.chromedriver().setup();
 		 driver=new ChromeDriver();
 		}
-		else if(browser.equalsIgnoreCase("Edge")) {
+		else if(BROWSER.equalsIgnoreCase("Edge")) {
 			WebDriverManager.edgedriver().setup();
 			 driver=new EdgeDriver();
-			
+			 }
+			 else if(BROWSER.equalsIgnoreCase("Operamini")) {
+					WebDriverManager.operadriver().setup();
+					 driver=new FirefoxDriver();
 		}
-		 else if(browser.equalsIgnoreCase("firefox")) {
-				WebDriverManager.firefoxdriver().setup();
-				 driver=new FirefoxDriver();
-	}
 		sdriver=driver;
 		WebDriverUtility wlib=new WebDriverUtility();
 		wlib.WaitForPageToLaod(driver);
@@ -60,13 +62,13 @@ public class BaseClass {
 		
 	
 		String URL = flib.getKeyValue("url");
-		String user = flib.getKeyValue("un");
-		String pwd = flib.getKeyValue("pw");
+		String userName = flib.getKeyValue("UN");
+		String Password = flib.getKeyValue("PW");
 		
 		
 		driver.get(URL);
 		LogInPage login=new LogInPage(driver);
-		login.LogIn(user, pwd);
+		login.LogIn(userName, Password);
 		
 		
 		
@@ -92,4 +94,4 @@ public class BaseClass {
 	}
 
 	
-}
+} 

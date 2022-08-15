@@ -60,6 +60,7 @@ public class CampaignAndProduct2Test extends BaseClass {
 			campaign.saveCampaign();
 			
 			home.signOut();
+			driver.quit();
 	}		
 
 	}

@@ -31,6 +31,7 @@ public class CreateOrganisationTest extends BaseClass {
 		Assert.assertEquals(ActualOrganisationData.contains(name), true);
 		
 		home.signOut();
+		driver.quit();
 	}
 
 }
