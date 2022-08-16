@@ -41,46 +41,6 @@
     <version>5.1.0</version>
 </dependency>
   </dependencies>
-  <profiles>
-  <profile>
-  <id>regressionTest</id>
-  <build>
-  <pluginManagement>
-  <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.0.0-M7</version>
-        <configuration>
-          <suiteXmlFiles>
-            <suiteXmlFile>Batchtestng.xml</suiteXmlFile>
-          </suiteXmlFiles>
-        </configuration>
-      </plugin>
-</plugins>
-  </pluginManagement>
-  </build>
-  </profile>
-  <profile>
-  <id>groupTest</id>
-  <build>
-  <pluginManagement>
-  <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.0.0-M7</version>
-        <configuration>
-          <suiteXmlFiles>
-            <suiteXmlFile>Grouptestng1.xml</suiteXmlFile>
-          </suiteXmlFiles>
-        </configuration>
-      </plugin>
-</plugins>
-  </pluginManagement>
-  </build>
-  </profile>
-  </profiles>
-  
+ 
   
 </project>
